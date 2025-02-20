@@ -18,8 +18,10 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-postcss`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-source-contentful`,
       options: {
+        spaceId: `7ptpp9wgkksf`,
+        accessToken: `jCPYQ58AW9652esMfV_p4CNpu4ZCEkz5A8PUDnYNIjQ`,
         name: `images`,
         path: `${__dirname}/src/images`,
       },
