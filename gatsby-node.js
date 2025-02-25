@@ -1,3 +1,5 @@
+const path = require("path");
+
 /**
  * Implement Gatsby's Node APIs in this file.
  *
@@ -5,12 +7,10 @@
  */
 
 /**
- * @type {import('gatsby').GatsbyNode['createPages']}
+ * @type {import('gatsby').GatsbyNode['onCreateWebpackConfig']}
  */
 
-import * as path from "path"
- 
-export const onCreateWebpackConfig = ({ actions }) => {
+exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       alias: {
@@ -18,17 +18,16 @@ export const onCreateWebpackConfig = ({ actions }) => {
         "@/lib/utils": path.resolve(__dirname, "src/lib/utils"),
       },
     },
-  })
-}
+  });
+};
 
-exports.createPages = async ({ actions }) => {
-  const { createPage } = actions
+// exports.createPages = async ({ actions }) => {
+//   const { createPage } = actions;
 
-  // const { createPage } = actions
-  // createPage({
-  //   path: "/using-dsg",
-  //   component: require.resolve("./src/templates/using-dsg.js"),
-  //   context: {},
-  //   defer: true,
-  // })
-}
+//   createPage({
+//     path: "/using-dsg",
+//     component: require.resolve("./src/templates/using-dsg.js"),
+//     context: {},
+//     defer: true,
+//   });
+// };
