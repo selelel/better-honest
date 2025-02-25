@@ -7,7 +7,23 @@
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}
  */
+
+import * as path from "path"
+ 
+export const onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        "@/components": path.resolve(__dirname, "src/components"),
+        "@/lib/utils": path.resolve(__dirname, "src/lib/utils"),
+      },
+    },
+  })
+}
+
 exports.createPages = async ({ actions }) => {
+  const { createPage } = actions
+
   // const { createPage } = actions
   // createPage({
   //   path: "/using-dsg",
