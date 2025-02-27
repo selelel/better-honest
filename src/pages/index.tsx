@@ -5,18 +5,20 @@ import HeroSection from "../components/landing-page-component/landing-hero-secti
 import Seo from "../components/seo"
 import StepSection from "@/components/landing-page-component/landing-step"
 import AboutSection from "@/components/landing-page-component/landing-about-section"
+import FAQSection from "@/components/landing-page-component/landing-faq-section"
 
 type DataProps = {
   site: {
     buildTime: string
   }
 }
-const LandingPage = ({data : {contentfulLandingPageAboutSection, ...data}} : {data: any}) => {
+const LandingPage = ({data : {contentfulLandingPageAboutSection, contentfulFrequentlAskedQuestion, ...data}} : {data: any}) => {
   return (
-   <Main className="flex flex-col items-center">
+   <Main className="flex flex-col gap-20 items-center">
       <HeroSection data={data} />
       <StepSection />
       <AboutSection data={contentfulLandingPageAboutSection}/>
+      <FAQSection data={contentfulFrequentlAskedQuestion} />
    </Main>
 )}
 
@@ -47,5 +49,11 @@ export const query = graphql`
         activeClient
         overAllClient
       }
+  contentfulFrequentlAskedQuestion {
+    accordion {
+      title
+      description
+    }
+  }
 }
 `
