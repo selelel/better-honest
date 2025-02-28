@@ -11,5 +11,5 @@ export const Section: React.FC<
 export const Main: React.FC<
   React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
 > = ({ className = "", ...props }) => (
-  <main className={cn("w-full", className)} {...props} />
+  <main className={cn("w-full px-12", className)} {...props} />
 );

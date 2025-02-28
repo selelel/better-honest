@@ -8,6 +8,9 @@ module.exports = {
   darkMode: false,
   theme: {
   	extend: {
+		padding: {
+			'120px' : "120px"
+		},
   		fontFamily: {
   			poppins: [
   				'Poppins',

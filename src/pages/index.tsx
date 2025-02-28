@@ -7,6 +7,7 @@ import StepSection from "@/components/landing-page-component/landing-step"
 import AboutSection from "@/components/landing-page-component/landing-about-section"
 import FAQSection from "@/components/landing-page-component/landing-faq-section"
 import { InlineWidget } from "react-calendly";
+import Layout from "@/components/layout/layout"
 
 type DataProps = {
   site: {
@@ -15,16 +16,19 @@ type DataProps = {
 }
 const LandingPage = ({data : {contentfulLandingPageAboutSection, contentfulFrequentlAskedQuestion, ...data}} : {data: any}) => {
   return (
-   <Main id="root" className="flex flex-col gap-20 items-center">
-      <HeroSection data={data} />
-      <StepSection />
-      <AboutSection data={contentfulLandingPageAboutSection}/>
-      <FAQSection data={contentfulFrequentlAskedQuestion} />
-      <InlineWidget
-        url="https://calendly.com/janrusselgorembalem4/30min"
-        styles={{width:"800px", height:"900px"}}
-      />
-   </Main>
+  <Layout>
+      <Main id="root" className="flex flex-col gap-20 items-center">
+            <HeroSection data={data} />
+            <StepSection />
+            <AboutSection data={contentfulLandingPageAboutSection}/>
+            <FAQSection data={contentfulFrequentlAskedQuestion} />
+            <InlineWidget
+              url="https://calendly.com/janrusselgorembalem4/30min"
+              styles={{width:"800px", height:"900px"}}
+            />
+      </Main>
+  </Layout>
+    
 )}
 
 export const Head: HeadFC<DataProps> = () => <Seo children={undefined} />
