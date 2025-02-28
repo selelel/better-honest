@@ -6,8 +6,7 @@ type accordionDataTypes = {title: string, description:string} []
 function FAQSection({data}: {data: any}) {
     const accordionData:accordionDataTypes = data.accordion || [];
     return ( 
-        <Section className="w-full h-[900px] flex flex-col items-center gap-10">
-
+        <Section className="w-full flex flex-col items-center gap-10">
             <div className="w-full text-center">
                 <h2 className="text-4xl">Frequently Asked Question</h2>
             </div>
