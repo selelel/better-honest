@@ -6,7 +6,7 @@ import Seo from "../components/seo"
 import StepSection from "@/components/landing-page-component/landing-step"
 import AboutSection from "@/components/landing-page-component/landing-about-section"
 import FAQSection from "@/components/landing-page-component/landing-faq-section"
-import { InlineWidget, PopupWidget } from "react-calendly";
+import { InlineWidget } from "react-calendly";
 
 type DataProps = {
   site: {
