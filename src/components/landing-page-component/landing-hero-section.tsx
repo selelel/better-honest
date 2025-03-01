@@ -6,7 +6,7 @@ function HeroSection({data}: {data: any}) {
     const {contentfulLandingPageHeroSection: hero_data, site :{siteMetadata: site}} = data;
     
     return (
-    <Section className="flex flex-col gap-2 justify-center items-center min-h-[700px] bg-orange-300">
+    <Section className="!px-0 !mx-0 flex flex-col gap-2 justify-center items-center min-h-[700px] bg-orange-300">
         <div className="text-center space-y-2">
             <p>Welcome to {site.title}</p>
             <h1 className="text-6xl font-medium">{hero_data.title}</h1>

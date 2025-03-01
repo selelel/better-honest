@@ -22,7 +22,7 @@ function StepSection() {
         },
     ]
     return (
-    <Section className="flex justify-between">
+    <Section className="flex justify-between overflow-hidden">
         {steps.map((data, idx) => (<Step {...data} step={idx + 1} />))}
     </Section>
     );
